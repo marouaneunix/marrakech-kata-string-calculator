@@ -1,3 +1,4 @@
 target/
-
+.idea/
+string-calculator.iml
 .DS_Store
