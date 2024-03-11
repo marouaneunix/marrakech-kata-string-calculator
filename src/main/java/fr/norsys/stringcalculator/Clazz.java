@@ -5,15 +5,17 @@ public class Clazz {
         if (numbers.isEmpty()) {
             return 0;
         }else {
-
+            String[] nums;
             char delimiter = ',';
             if (numbers.startsWith("//"))
             {
                 delimiter = numbers.charAt(2);
                 numbers = numbers.substring(numbers.indexOf('\n') + 1);
-                String[] nums = numbers.split(Character.toString(delimiter));
+                nums = numbers.split(Character.toString(delimiter));
+            }else {
+                nums = numbers.split("[,\n]");
             }
-                String[] nums = numbers.split("[,\n]");
+
 
 
             int sum =0;
