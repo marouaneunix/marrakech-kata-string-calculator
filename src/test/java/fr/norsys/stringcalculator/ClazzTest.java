@@ -24,4 +24,11 @@ public class ClazzTest {
         assertEquals(3, result);
     }
 
+    @Test
+    public void should_return_25_when_input_is_5_comas_5_comas_5_comas_5_comas_5_amout_numbers() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("5,5,5,5,5");
+        assertEquals(25, result);
+    }
+
 }
