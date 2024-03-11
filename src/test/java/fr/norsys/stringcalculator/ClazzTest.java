@@ -55,5 +55,12 @@ public class ClazzTest {
         assertEquals(21, result);
     }
 
+    @Test
+    public void should_return_sum_of_unknown_amount_of_numbers_as_input_separated_by_different_delimiters()
+    {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//;\n1;2;3");
+        assertEquals(6, result);
+    }
 
 }
