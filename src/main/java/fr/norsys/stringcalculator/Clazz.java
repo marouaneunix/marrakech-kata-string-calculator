@@ -7,7 +7,7 @@ public class Clazz {
         if (numbers.isEmpty()) {
             return 0;
         }
-        Integer[] numbersParsed = Arrays.stream(numbers.split(","))
+        Integer[] numbersParsed = Arrays.stream(numbers.split(",|\n"))
                 .map(Integer::parseInt)
                 .toArray(Integer[]::new);
 
