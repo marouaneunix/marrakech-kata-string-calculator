@@ -5,9 +5,6 @@ public class Clazz {
         if (numbers.isEmpty()) {
             return 0;
         }
-        else if (numbers.equals("2")) {
-            return 2;
-        }
-        return 1;
+        return Integer.parseInt(numbers);
     }
 }

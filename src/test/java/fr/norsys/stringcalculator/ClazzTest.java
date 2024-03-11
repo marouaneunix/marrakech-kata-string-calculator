@@ -24,4 +24,11 @@ public class ClazzTest {
         int result = clazz.add("2");
         assertEquals(2, result);
     }
+
+    @Test
+    public void should_return_given_number_when_input_is_a_number_other_than_1_or_2() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("3");
+        assertEquals(3, result);
+    }
 }
