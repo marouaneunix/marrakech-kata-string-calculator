@@ -38,6 +38,13 @@ public class ClazzTest {
         assertEquals(3, result);
     }
 
+    @Test
+    public void should_return_6_when_input_is_1_new_lines_2_comas_3() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("1\n2,3");
+        assertEquals(6, result);
+    }
+
 
 
 }
