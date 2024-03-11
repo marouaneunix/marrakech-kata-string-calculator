@@ -21,8 +21,8 @@ public class Clazz {
         if (!negativeNumbers.isEmpty()) {
             throw new IllegalArgumentException("Negatives not allowed: " + negativeNumbers);
         }
-
         return sum;
+
     }
 
     private String replaceCustomDelimiter(String numbers) {
