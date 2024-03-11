@@ -63,12 +63,23 @@ public class ClazzTest {
         assertEquals(1+2, result);
     }
 
- @Test void should_throw_an_exception_when_number_is_negative(){
+    @Test void should_throw_an_exception_when_number_is_negative(){
         //Arrange
         Clazz clazz = new Clazz();
         //Act
         //assert
         assertThrows(IllegalArgumentException.class, () -> clazz.add("1,2,-2"));
+    }
+
+    @Test void should_ignore_numbers_bigger_than_1000(){
+        //Arrange
+        Clazz clazz = new Clazz();
+
+        //Act
+        int result =clazz.add("1,2,1000,5");
+
+        //assert
+        assertEquals(8, result);
     }
 
 

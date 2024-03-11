@@ -16,23 +16,19 @@ public class Clazz {
             delimiter = numbers.substring(2, delimiterIndex);
             numbers = numbers.substring(delimiterIndex + 1);
         }
-
         Integer[] numbersParsed = Arrays.stream(numbers.split(delimiter))
                 .map(Integer::parseInt)
+                .filter(n->n<1000)
                 .toArray(Integer[]::new);
-
         if (Arrays.stream(numbersParsed).anyMatch(num -> num < 0)) {
             List<Integer> negativeNum = Arrays.stream(numbersParsed).filter(n->n<0).collect(Collectors.toList());
             throw new IllegalArgumentException("Negative numbers are not allowed " + negativeNum);
         }
-
         int sum = 0;
-
         for (int i = 0; i < numbersParsed.length; i++) {
             sum+=numbersParsed[i];
         }
 
         return sum;
-
     }
 }
