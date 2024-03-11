@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
-public class Clazz {
+public class StringCalculator {
     public int add(String numbers) {
         if (numbers.isEmpty()) {
             return 0;
