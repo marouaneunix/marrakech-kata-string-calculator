@@ -50,6 +50,16 @@ public class ClazzTest {
   */
 
 
+    @Test void should_handle_lines_betweendd_numbers(){
+        //Arrange
+        Clazz clazz = new Clazz();
+
+        //Act
+        int result =clazz.add("//,\n1,2");
+
+        //assert
+        assertEquals(1+2, result);
+    }
 
 
 
