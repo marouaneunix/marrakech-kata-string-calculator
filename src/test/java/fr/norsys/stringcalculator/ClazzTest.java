@@ -75,6 +75,53 @@ public class ClazzTest {
         assertEquals("Negatives not allowed: [-5, -2]", exception.getMessage());
     }
 
+    @Test
+    public void should_return_2_when_input_is_2_comas_1000() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("2,1000");
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void should_return_2_when_input_is_slash_slash_delimiter_new_lines_2_delimiter_1000() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//;\n2;1000");
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void should_return_5_when_input_is_slash_slash_duplicate_delimiter_new_lines_2_duplicate_delimiter_3() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[***]\n2***3");
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void should_return_9_when_input_is_slash_slash_delimiter_new_lines_2_delimiter_3_delimiter_4() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[***]\n2***3***4");
+        assertEquals(9, result);
+    }
+    @Test
+    public void should_return_6_when_input_is_1_2_3_with_Two_delimiters() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[*][,]\n1*2,3");
+        assertEquals(6, result);
+    }
+
+    @Test
+    public void should_return_15_when_input_is_1_2_3_4_5_with_Two_delimiters_and_multiple_numbers() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[*][,]\n1*2,3*4,5");
+        assertEquals(15, result);
+    }
+
+    @Test
+    public void should_return_10_when_input_is_1_2_3_4_with_multiple_delimiters() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[*][,][;]\n1*2,3;4");
+        assertEquals(10, result);
+    }
 
 
 
