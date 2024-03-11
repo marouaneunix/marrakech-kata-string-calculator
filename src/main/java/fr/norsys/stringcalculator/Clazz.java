@@ -1,5 +1,6 @@
 package fr.norsys.stringcalculator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Clazz {
@@ -15,10 +16,13 @@ public class Clazz {
             };
             String[] nums = numbers.split(delimiter);
             int sum = 0;
+            ArrayList<String> negativeNums = new ArrayList<>();
             for (String num : nums) {
-                System.out.println(num);
-                sum += Integer.parseInt(num.trim());
+                var intNum= Integer.parseInt(num.trim());
+                if(intNum<0) negativeNums.add(String.valueOf(intNum));
+                sum += intNum;
             }
+            if(!negativeNums.isEmpty()) throw new RuntimeException("negatives not allowed - "+negativeNums.toString());
             return sum;
         }
     }

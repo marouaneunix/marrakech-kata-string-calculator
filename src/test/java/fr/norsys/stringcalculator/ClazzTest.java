@@ -1,7 +1,8 @@
 package fr.norsys.stringcalculator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ClazzTest {
     @Test
@@ -61,6 +62,21 @@ public class ClazzTest {
         Clazz clazz = new Clazz();
         int result = clazz.add("//;\n1;2;3");
         assertEquals(6, result);
+    }
+
+    @Test
+    public void should_return_sum_of_unknown_amount_of_numbers_as_input_and_ignore_negative_number()
+    {
+        Clazz clazz = new Clazz();
+
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+            clazz.add("//;\n1;2;3;-4;-5");
+        });
+
+        String expectedMessage ="negatives not allowed - [-4, -5]";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
 }
