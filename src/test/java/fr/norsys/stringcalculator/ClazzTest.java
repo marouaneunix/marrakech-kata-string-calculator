@@ -31,4 +31,13 @@ public class ClazzTest {
         int result = clazz.add("3");
         assertEquals(3, result);
     }
+
+    @Test
+    public void should_return_sum_of_two_numbers_when_input_has_two_numbers_separated_by_comma() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("1,2");
+        assertEquals(3, result);
+    }
+
+
 }
