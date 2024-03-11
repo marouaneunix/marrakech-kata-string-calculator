@@ -1,7 +1,7 @@
 package fr.norsys.stringcalculator;
 import java.util.ArrayList;
 import java.util.List;
-public class Clazz {
+public class CalculatorString {
     public int add(String numbers) {
         if (numbers.isEmpty()) {
             return 0;
