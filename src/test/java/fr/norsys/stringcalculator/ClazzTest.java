@@ -95,4 +95,19 @@ public class ClazzTest {
         assertEquals(6, result);
     }
 
+    @Test
+    public void should_allow_multiple_delimiters()
+    {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[*][%]\n1*2%3");
+        assertEquals(6, result);
+    }
+    @Test
+    public void should_allow_multiple_delimiters_with_any_length()
+    {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[****][%%%%][&]\n1****2%%%3");
+        assertEquals(6, result);
+    }
+
 }
