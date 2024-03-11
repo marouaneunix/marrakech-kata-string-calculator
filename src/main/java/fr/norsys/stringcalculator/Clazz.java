@@ -33,7 +33,6 @@ public class Clazz {
                 numbers = numbers.substring(indexOfNewLine +1);
             }
         }
-
         String numbersWithoutNewLine = numbers.replaceAll("[\n\\s]", "");
         return numbersWithoutNewLine.split(String.valueOf(delimiters));
     }

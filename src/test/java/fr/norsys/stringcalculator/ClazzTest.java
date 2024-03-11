@@ -39,7 +39,7 @@ public class ClazzTest {
 
     @Test
     public void should_be_ok_if_multiple_lines(){
-        int result=clazz.add("1\n,2\n,2");
+        int result=clazz.add("1,\n2,2");
         assertEquals(5,result);
     }
 
@@ -63,6 +63,7 @@ public class ClazzTest {
         int result=clazz.add("//[----]\n1----2----3");
         assertEquals(6,result);
     }
+
     @Test
     public void should_not_accept_negatives(){
         String negativeNumber = "-1,2,-3";
