@@ -79,4 +79,12 @@ public class ClazzTest {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
+    @Test
+    public void should_ignore_numbers_bigger_than_1000()
+    {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//;\n1;2;3;1001;2000");
+        assertEquals(6, result);
+    }
+
 }

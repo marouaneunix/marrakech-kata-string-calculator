@@ -20,7 +20,7 @@ public class Clazz {
             for (String num : nums) {
                 var intNum= Integer.parseInt(num.trim());
                 if(intNum<0) negativeNums.add(String.valueOf(intNum));
-                sum += intNum;
+                sum += intNum>1000 ?0: intNum;
             }
             if(!negativeNums.isEmpty()) throw new RuntimeException("negatives not allowed - "+negativeNums.toString());
             return sum;
