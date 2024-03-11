@@ -79,4 +79,18 @@ public class ClazzTest {
         assertEquals(6,result);
     }
 
+    @Test
+    void should_return_6_when_using_multiple_delimiters_1_2_3(){
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[*][%]\n1*2%3");
+        assertEquals(6,result);
+    }
+
+    @Test
+    void should_return_6_when_using_multiple_delimiters_with_length_longer_than_one_char_1_2_3(){
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//[***][%]\n1***2%3");
+        assertEquals(6,result);
+    }
+
 }
