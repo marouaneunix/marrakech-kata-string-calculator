@@ -23,4 +23,13 @@ public class ClazzTest {
         //Assert
         assertEquals(1, result);
     }
+
+    @Test
+    public void should_not_return_an_error_when_we_have_multiple_numbers() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("1,2,3,4,5");
+        assertEquals(1+2+3+4+5, result);
+    }
+
+
 }
