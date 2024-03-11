@@ -5,6 +5,13 @@ public class Clazz {
         if (numbers.isEmpty()) {
             return 0;
         }
-        return 1;
+        else {
+            String [] items=numbers.split(",");
+            int sum=0;
+            for(String item:items){
+                sum+=Integer.parseInt(item);
+            }
+            return sum;
+        }
     }
 }

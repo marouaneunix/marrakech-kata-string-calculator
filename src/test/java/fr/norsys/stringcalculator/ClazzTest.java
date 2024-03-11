@@ -17,4 +17,10 @@ public class ClazzTest {
         int result = clazz.add("1");
         assertEquals(1, result);
     }
+    @Test
+    public void should_return_sum_when_input_is_more_than_1_number() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("1,2");
+        assertEquals(3, result);
+    }
 }
