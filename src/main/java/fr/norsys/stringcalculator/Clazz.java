@@ -11,10 +11,11 @@ public class Clazz {
             {
                 delimiter = numbers.charAt(2);
                 numbers = numbers.substring(numbers.indexOf('\n') + 1);
-                nums = numbers.split(Character.toString(delimiter));
-            }else {
-                nums = numbers.split("[,\n]");
+//                nums = numbers.split(Character.toString(delimiter));
             }
+//            else {
+                nums = numbers.split("[,\n" + delimiter + "]");
+//            }
 
 
 
