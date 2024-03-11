@@ -1,6 +1,8 @@
 package fr.norsys.stringcalculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 public class ClazzTest {
@@ -57,6 +59,20 @@ public class ClazzTest {
         Clazz clazz = new Clazz();
         int result = clazz.add("//;\n2;3");
         assertEquals(5, result);
+    }
+
+    @Test
+    public void should_return_exception_message_when_input_is_negativeNum() {
+        Clazz clazz = new Clazz();
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> clazz.add("-5"));
+        assertEquals("Negatives not allowed: [-5]", exception.getMessage());
+    }
+
+    @Test
+    public void should_return_exception_message_when_input_is_negativeNum_comas_negativeNum() {
+        Clazz clazz = new Clazz();
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> clazz.add("-5,-2"));
+        assertEquals("Negatives not allowed: [-5, -2]", exception.getMessage());
     }
 
 
