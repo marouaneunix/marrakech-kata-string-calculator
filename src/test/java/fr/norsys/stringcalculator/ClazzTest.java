@@ -17,4 +17,11 @@ public class ClazzTest {
         int result = clazz.add("1");
         assertEquals(1, result);
     }
+
+    @Test
+    public void should_return_2_when_input_is_2() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("2");
+        assertEquals(2, result);
+    }
 }
