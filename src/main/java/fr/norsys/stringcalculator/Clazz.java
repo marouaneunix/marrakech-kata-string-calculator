@@ -11,8 +11,9 @@ public class Clazz {
             {
                 delimiter = numbers.charAt(2);
                 numbers = numbers.substring(numbers.indexOf('\n') + 1);
+                String[] nums = numbers.split(Character.toString(delimiter));
             }
-            String[] nums = numbers.split(Character.toString(delimiter));
+                String[] nums = numbers.split("[,\n]");
 
 
             int sum =0;
