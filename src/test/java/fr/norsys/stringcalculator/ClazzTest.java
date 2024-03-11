@@ -51,9 +51,7 @@ public class ClazzTest {
     @Test
     void should_throw_an_illegal_argument_exception_when_passing_negatives_with_custom_delimiter(){
         Clazz clazz = new Clazz();
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            clazz.add("//;\n1;2;-3;-4");
-        });
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> clazz.add("//;\n1;2;-3;-4"));
         String expectedMessage = "Negative numbers arent allowed: [-3, -4]";
         String actualMessage = exception.getMessage();
         assertEquals(expectedMessage, actualMessage);
