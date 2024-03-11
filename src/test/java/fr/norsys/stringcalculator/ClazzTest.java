@@ -104,5 +104,23 @@ public class ClazzTest {
         assertEquals(6, result);
     }
 
+    @Test
+    public void should_return_10_when_input_is_multiple_delimiter_slash() {
+        // Arrange
+        Clazz clazz = new Clazz();
+        // Act
+        int result = clazz.add("//[*][%]\n1*4%5");
+        // Assert
+        assertEquals(10, result);
+    }
 
+    @Test
+    public void should_return_10_when_we_have_multiple_delimiter_with_longer_length() {
+        // Arrange
+        Clazz clazz = new Clazz();
+        // Act
+        int result = clazz.add("//[**][%%]\n2**5%%3");
+        // Assert
+        assertEquals(10,result);
+    }
 }
