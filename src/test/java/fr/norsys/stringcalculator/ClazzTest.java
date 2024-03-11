@@ -45,6 +45,22 @@ public class ClazzTest {
         assertEquals(6, result);
     }
 
+    @Test
+    public void should_return_3_when_input_is_slash_slash_comas_new_lines_1_comas_2() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//,\n1,2");
+        assertEquals(3, result);
+    }
+
+    @Test
+    public void should_return_5_when_input_is_slash_slash_delimiter_new_lines_2_delimiter_3() {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("//;\n2;3");
+        assertEquals(5, result);
+    }
+
+
+
 
 
 }
