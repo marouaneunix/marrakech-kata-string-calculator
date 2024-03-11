@@ -1,9 +1,6 @@
 package fr.norsys.stringcalculator;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 public class Clazz {
     public int add(String numbers) {
         if (numbers.isEmpty()) {
@@ -22,36 +19,15 @@ public class Clazz {
                     System.out.println("second delim"+delimiter);
                     delimiter.replaceAll("[\\[\\]]","");
                 }
-
-
-
-
                 numbers = numbers.substring(numbers.indexOf('\n') + 1);
-//                nums = numbers.split(Character.toString(delimiter));
             }
-//            else {
                 nums = numbers.split("[,\n" + delimiter + "]");
-//                for (String num:nums){
-////                    System.out.print(num+" ");
-////                    System.out.print("-------");
-//                    System.out.print(num.getClass().getName()+" ");
-//                }
-//                int i=0;
             for (String num:nums){
                 if(!num.isEmpty()){
                     System.out.print(num);
                     System.out.print("-");
                 }
-
             }
-//           for (String num:nums){
-//                System.out.print(num+"-");
-//            }
-
-//            }
-
-
-
             int sum =0;
             List<Integer> negatives = new ArrayList<>();
             for(String num : nums){
@@ -59,21 +35,15 @@ public class Clazz {
                     int number = Integer.parseInt(num.trim());
                     if(number >= 1000){
                         number = 0;
-                    }
-                    if(number<0){
+                    }if(number<0){
                         negatives.add(number);
                     }
                     sum+=number;
                 }
-
-
-
-            }
-            if (!negatives.isEmpty()){
+            }if (!negatives.isEmpty()){
                 throw new IllegalArgumentException("Negatives not allowed: " + negatives);
             }
             return sum;
         }
-
     }
 }

@@ -27,7 +27,7 @@ public class ClazzTest {
     }
 
     @Test
-    public void should_return_25_when_input_is_5_comas_5_comas_5_comas_5_comas_5_amout_numbers() {
+    public void should_return_25_when_input_is_multiple_numbers_5() {
         Clazz clazz = new Clazz();
         int result = clazz.add("5,5,5,5,5");
         assertEquals(25, result);
@@ -48,14 +48,14 @@ public class ClazzTest {
     }
 
     @Test
-    public void should_return_3_when_input_is_slash_slash_comas_new_lines_1_comas_2() {
+    public void should_return_3_when_input_is_double_slash_comas_new_lines_1_comas_2() {
         Clazz clazz = new Clazz();
         int result = clazz.add("//,\n1,2");
         assertEquals(3, result);
     }
 
     @Test
-    public void should_return_5_when_input_is_slash_slash_delimiter_new_lines_2_delimiter_3() {
+    public void should_return_5_when_input_is_double_slash_delimiter_new_lines_2_delimiter_3() {
         Clazz clazz = new Clazz();
         int result = clazz.add("//;\n2;3");
         assertEquals(5, result);
@@ -83,21 +83,21 @@ public class ClazzTest {
     }
 
     @Test
-    public void should_return_2_when_input_is_slash_slash_delimiter_new_lines_2_delimiter_1000() {
+    public void should_return_2_when_input_is_double_slash_delimiter_new_lines_2_delimiter_1000() {
         Clazz clazz = new Clazz();
         int result = clazz.add("//;\n2;1000");
         assertEquals(2, result);
     }
 
     @Test
-    public void should_return_5_when_input_is_slash_slash_duplicate_delimiter_new_lines_2_duplicate_delimiter_3() {
+    public void should_return_5_when_input_is_double_slash_duplicate_delimiter_new_lines_2_duplicate_delimiter_3() {
         Clazz clazz = new Clazz();
         int result = clazz.add("//[***]\n2***3");
         assertEquals(5, result);
     }
 
     @Test
-    public void should_return_9_when_input_is_slash_slash_delimiter_new_lines_2_delimiter_3_delimiter_4() {
+    public void should_return_9_when_input_is_double_slash_delimiter_new_lines_2_delimiter_3_delimiter_4() {
         Clazz clazz = new Clazz();
         int result = clazz.add("//[***]\n2***3***4");
         assertEquals(9, result);
