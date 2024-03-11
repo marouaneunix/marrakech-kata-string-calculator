@@ -31,7 +31,7 @@ public class ClazzTest {
     @Test
     public void should_return_6_when_input_is_1_n2_3() {
         Clazz clazz = new Clazz();
-        int result = clazz.add("//1\n2,3");
+        int result = clazz.add("1\n2,3");
 
         assertEquals(6, result);
     }
