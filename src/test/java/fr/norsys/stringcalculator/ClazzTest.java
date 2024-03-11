@@ -1,6 +1,8 @@
 package fr.norsys.stringcalculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 public class ClazzTest {
@@ -61,6 +63,13 @@ public class ClazzTest {
         assertEquals(1+2, result);
     }
 
+ @Test void should_throw_an_exception_when_number_is_negative(){
+        //Arrange
+        Clazz clazz = new Clazz();
+        //Act
+        //assert
+        assertThrows(IllegalArgumentException.class, () -> clazz.add("1,2,-2"));
+    }
 
 
 }

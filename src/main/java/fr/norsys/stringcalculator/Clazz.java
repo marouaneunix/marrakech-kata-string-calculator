@@ -1,6 +1,8 @@
 package fr.norsys.stringcalculator;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Clazz {
     public int add(String numbers) {
@@ -18,6 +20,11 @@ public class Clazz {
         Integer[] numbersParsed = Arrays.stream(numbers.split(delimiter))
                 .map(Integer::parseInt)
                 .toArray(Integer[]::new);
+
+        if (Arrays.stream(numbersParsed).anyMatch(num -> num < 0)) {
+            List<Integer> negativeNum = Arrays.stream(numbersParsed).filter(n->n<0).collect(Collectors.toList());
+            throw new IllegalArgumentException("Negative numbers are not allowed " + negativeNum);
+        }
 
         int sum = 0;
 
