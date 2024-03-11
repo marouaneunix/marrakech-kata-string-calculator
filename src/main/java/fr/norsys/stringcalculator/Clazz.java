@@ -2,6 +2,7 @@ package fr.norsys.stringcalculator;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Clazz {
@@ -13,7 +14,11 @@ public class Clazz {
 
         if (numbers.startsWith("//")) {
             int delimiterIndex = numbers.indexOf("\n");
-            delimiter = numbers.substring(2, delimiterIndex);
+            String customDelimiter = numbers.substring(2, delimiterIndex);
+            if (customDelimiter.startsWith("[") && customDelimiter.endsWith("]")) {
+                customDelimiter = customDelimiter.substring(1, customDelimiter.length() - 1);
+            }
+            delimiter = Pattern.quote(customDelimiter);
             numbers = numbers.substring(delimiterIndex + 1);
         }
         Integer[] numbersParsed = Arrays.stream(numbers.split(delimiter))

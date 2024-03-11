@@ -82,5 +82,27 @@ public class ClazzTest {
         assertEquals(8, result);
     }
 
+    @Test void should_handle_delimiters(){
+        //Arrange
+        Clazz clazz = new Clazz();
+
+        //Act
+        int result =clazz.add("//[***]\n1***2***3");
+
+        //assert
+        assertEquals(6, result);
+    }
+
+    @Test void should_handle_crochet_delimiter(){
+        //Arrange
+        Clazz clazz = new Clazz();
+
+        //Act
+        int result =clazz.add("//[\n1[2[3");
+
+        //assert
+        assertEquals(6, result);
+    }
+
 
 }
