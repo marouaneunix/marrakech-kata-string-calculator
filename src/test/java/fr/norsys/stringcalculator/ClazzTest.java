@@ -47,4 +47,13 @@ public class ClazzTest {
         assertEquals(21, result);
     }
 
+    @Test
+    public void should_return_sum_of_unknown_amount_of_numbers_as_input_separated_by_comma_and_or_new_line()
+    {
+        Clazz clazz = new Clazz();
+        int result = clazz.add("1\n2,3,4,5,6,\n");
+        assertEquals(21, result);
+    }
+
+
 }
